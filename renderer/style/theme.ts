@@ -1,10 +1,10 @@
 const colors = {
   black: "#000000",
   white: "#ffffff",
-  beige: "#F9F3DF",
-  yellow: "#FDFCE5",
-  skyblue: "#D7E9F7",
-  orange: "#F4D19B",
+  navy: "#142850",
+  turquoise1: "#27496D",
+  turquoise2: "#0C7B93",
+  skyblue: "#00A8CC",
 };
 
 const spacing = {
