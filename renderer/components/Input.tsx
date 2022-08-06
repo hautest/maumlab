@@ -23,6 +23,9 @@ const StyledInput = styled.input<{ state: boolean }>`
   border-radius: ${theme.spacing[8]};
   border: solid 1px
     ${({ state }) => (state ? theme.colors.skyblue : theme.colors.red)};
+  :disabled {
+    border: solid 1px ${theme.colors.gray};
+  }
 `;
 
 const StyledTextarea = styled.textarea<{ state: boolean }>`
@@ -33,4 +36,7 @@ const StyledTextarea = styled.textarea<{ state: boolean }>`
   resize: none;
   border: solid 1px
     ${({ state }) => (state ? theme.colors.skyblue : theme.colors.red)};
+  :disabled {
+    border: solid 1px ${theme.colors.gray};
+  }
 `;
