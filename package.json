@@ -11,8 +11,10 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
     "electron-serve": "^1.1.0",
     "electron-store": "^8.0.1",
+    "firebase": "^9.9.2",
     "styled-components": "^5.3.5",
     "styled-reset": "^4.4.2"
   },
