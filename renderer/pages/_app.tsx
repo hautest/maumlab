@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import { GlobalStyle } from "../style";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../style/theme";
 import type { AppProps } from "next/app";
 
 export default function (props: AppProps) {
@@ -22,7 +24,9 @@ export default function (props: AppProps) {
         />
       </Head>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </React.Fragment>
   );
 }
