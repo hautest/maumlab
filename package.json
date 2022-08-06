@@ -13,12 +13,14 @@
   "dependencies": {
     "electron-serve": "^1.1.0",
     "electron-store": "^8.0.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "styled-reset": "^4.4.2"
   },
   "devDependencies": {
     "@material-ui/core": "^4.12.4",
     "@types/node": "^16.11.7",
     "@types/react": "^18.0.8",
+    "@types/styled-components": "^5.1.25",
     "electron": "^18.2.0",
     "electron-builder": "^23.0.3",
     "next": "^12.1.6",
