@@ -6,6 +6,7 @@ const colors = {
   turquoise2: "#0C7B93",
   skyblue: "#00A8CC",
   red: "#FE5432",
+  gray: "#EDEDED",
 };
 
 const spacing = {
