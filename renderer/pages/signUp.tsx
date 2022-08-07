@@ -85,7 +85,11 @@ export default function SignUp() {
       <TypographyBox>
         <Typography type="body4">계정이 있으시면</Typography>
         <Link href="/login">
-          <Typography color="turquoise2" type="body4">
+          <Typography
+            color="turquoise2"
+            style={{ cursor: "pointer" }}
+            type="body4"
+          >
             로그인하러 가기
           </Typography>
         </Link>
