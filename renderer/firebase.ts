@@ -1,21 +1,18 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_STORGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGE_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
+  apiKey: "AIzaSyBu2rDVRiyhsugpLWAsrDWrhoVZmiM4WEo",
+  authDomain: "test-firebase-d594b.firebaseapp.com",
+  projectId: "test-firebase-d594b",
+  storageBucket: "test-firebase-d594b.appspot.com",
+  messagingSenderId: "379321634435",
+  appId: "1:379321634435:web:9c344fc026c961c06095b6",
+  measurementId: "G-LEG7MYXHN8",
 };
 
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
-export const firebaseInstance = firebase;
-
-export const authService = firebase.auth();
-
-export const dbService = firebase.firestore();
+export const dbService = getFirestore();
+export const authService = getAuth();
