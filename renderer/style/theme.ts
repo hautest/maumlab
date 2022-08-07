@@ -18,7 +18,7 @@ const spacing = {
   "24": "24px",
   "28": "28px",
   "32": "32px",
-  "62": "64px",
+  "64": "64px",
 };
 
 export const theme = {

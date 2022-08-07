@@ -1,5 +1,5 @@
 import { ReactNode, MouseEvent, FC, useState, useEffect } from "react";
-import ReactDOM, { createPortal } from "react-dom";
+import { createPortal } from "react-dom";
 import { theme } from "../style";
 import styled from "styled-components";
 
@@ -20,7 +20,7 @@ function Portal({ children }: Pick<ModalInterface, "children">) {
     return <></>;
   }
 
-  return ReactDOM.createPortal(children, element);
+  return createPortal(children, element);
 }
 
 export function Modal({ children, visible, onClick }: ModalInterface) {
@@ -46,5 +46,5 @@ const StyledModal: FC<ModalInterface> = styled.div<ModalInterface>`
   bottom: 0;
   z-index: 1;
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.4;
 `;

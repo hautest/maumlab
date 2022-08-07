@@ -5,6 +5,7 @@ import { theme } from "./theme";
 export const GlobalStyle = createGlobalStyle`
   ${reset};
   html * {
+    color: ${theme.colors.black};
     box-sizing: border-box;
     @font-face {
     font-family: 'SUIT-Medium';
@@ -14,7 +15,13 @@ export const GlobalStyle = createGlobalStyle`
 }
 font-family: "SUIT-Medium";
   }
+  body {
+    height: 100vh;
+  }
   a {
     text-decoration-line : none;
+  }
+  #__next {
+    height: 100%;
   }
 `;
