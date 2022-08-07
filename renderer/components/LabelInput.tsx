@@ -15,8 +15,8 @@ export function LabelInput({
   state,
 }: LabelInputProps) {
   return (
-    <>
-      <label>
+    <div>
+      <label htmlFor={id}>
         <Typography type="subtitle">{children}</Typography>
       </label>
       <Input
@@ -27,6 +27,6 @@ export function LabelInput({
         value={value}
         onChange={onChange}
       />
-    </>
+    </div>
   );
 }
