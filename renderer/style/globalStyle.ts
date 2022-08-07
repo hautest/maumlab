@@ -5,6 +5,7 @@ import { theme } from "./theme";
 export const GlobalStyle = createGlobalStyle`
   ${reset};
   html * {
+    color: ${theme.colors.black};
     box-sizing: border-box;
     @font-face {
     font-family: 'SUIT-Medium';
