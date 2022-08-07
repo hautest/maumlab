@@ -15,7 +15,13 @@ export const GlobalStyle = createGlobalStyle`
 }
 font-family: "SUIT-Medium";
   }
+  body {
+    height: 100vh;
+  }
   a {
     text-decoration-line : none;
+  }
+  #__next {
+    height: 100%;
   }
 `;
