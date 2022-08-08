@@ -38,7 +38,7 @@ const StyledModal: FC<ModalInterface> = styled.div<ModalInterface>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${theme.colors.black};
+  background-color: ${theme.colors.navy};
   position: fixed;
   top: 0;
   left: 0;
@@ -46,5 +46,5 @@ const StyledModal: FC<ModalInterface> = styled.div<ModalInterface>`
   bottom: 0;
   z-index: 1;
   height: 100%;
-  opacity: 0.4;
+  opacity: 1;
 `;

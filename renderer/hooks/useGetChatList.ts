@@ -6,24 +6,23 @@ export function useGetChatList() {
   const [chattingRoomList, setChattingRoomList] = useState([]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const { email } = JSON.parse(localStorage.getItem("userData"));
-      onSnapshot(collection(dbService, "Chatting"), (snapShot) => {
-        const chattingRoomListData = snapShot.docs.map((doc) => doc.data());
-        chattingRoomListData.forEach((room) => {
-          room.participant.forEach((user) => {
-            if (user === email) {
-              setChattingRoomList((prev) => {
-                const filterRoom = prev.filter(
-                  (rommData) => rommData.id !== room.id
-                );
-                return [...filterRoom, room];
-              });
-            }
-          });
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    if (!userData) return;
+    onSnapshot(collection(dbService, "Chatting"), (snapShot) => {
+      const chattingRoomListData = snapShot.docs.map((doc) => doc.data());
+      chattingRoomListData.forEach((room) => {
+        room.participant.forEach((user) => {
+          if (user === userData.email) {
+            setChattingRoomList((prev) => {
+              const filterRoom = prev.filter(
+                (rommData) => rommData.id !== room.id
+              );
+              return [...filterRoom, room];
+            });
+          }
         });
       });
-    }
+    });
   }, []);
 
   return chattingRoomList;
