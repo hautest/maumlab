@@ -1,5 +1,5 @@
 import { authService, dbService } from "../firebase";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, DocumentData, updateDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -41,6 +41,7 @@ export function useLogin() {
     })
       .then(() => {
         localStorage.removeItem("userData");
+        router.push("/login");
       })
       .catch((error) => {
         console.log(error);

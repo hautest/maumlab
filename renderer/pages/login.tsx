@@ -12,11 +12,10 @@ export default function Login() {
   const { login, error } = useLogin();
   const router = useRouter();
   useEffect(() => {
-    authService.onAuthStateChanged((data) => {
-      if (data) {
-        router.push("/home");
-      }
-    });
+    const user = window.localStorage.getItem("userData");
+    if (user) {
+      router.push("/home");
+    }
   }, []);
 
   const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {

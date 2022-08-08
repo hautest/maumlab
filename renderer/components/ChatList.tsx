@@ -4,11 +4,10 @@ import { Typography } from "./Typography";
 
 export function ChatList() {
   const chattingRoomList = useGetChatList();
-  console.log(chattingRoomList);
   return (
     <StyledList>
       {chattingRoomList?.map((arr) => (
-        <FlexAlignCenterLi>
+        <FlexAlignCenterLi key={arr.id}>
           <Typography style={{ cursor: "pointer" }} type="body3" key={arr.id}>
             {arr.chatName}
           </Typography>
