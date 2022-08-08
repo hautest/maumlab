@@ -31,23 +31,19 @@ export function useCreateUser() {
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
           setError("이미 존재하는 이메일입니다.");
-        }
-        if (error.code === "auth/invalid-email") {
+        } else if (error.code === "auth/invalid-email") {
           setError("이메일 형식이 올바르지 않습니다.");
-        }
-        if (error.code === "auth/weak-password") {
+        } else if (error.code === "auth/weak-password") {
           setError("비밀번호는 6자리 이상이어야 합니다.");
-        }
-        if (error.code === "auth/operation-not-allowed") {
+        } else if (error.code === "auth/operation-not-allowed") {
           setError("이메일/비밀번호 로그인이 비활성화 되어있습니다.");
-        }
-        if (error.code === "auth/invalid-crdential") {
+        } else if (error.code === "auth/invalid-crdential") {
           setError("이메일/비밀번호가 올바르지 않습니다.");
-        }
-        if (error.code === "auth/user-disabled") {
+        } else if (error.code === "auth/user-disabled") {
           setError("이메일/비밀번호 로그인이 비활성화 되어있습니다.");
+        } else {
+          setError("알 수 없는 오류가 발생했습니다.");
         }
-        console.log(error);
       });
   };
   return [createUser, error] as const;

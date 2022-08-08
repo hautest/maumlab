@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { initializeAuth, browserLocalPersistence } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -12,7 +12,6 @@ const firebaseConfig = {
   measurementId: "G-LEG7MYXHN8",
 };
 
-initializeApp(firebaseConfig);
-
-export const dbService = getFirestore();
-export const authService = getAuth();
+export const fb = initializeApp(firebaseConfig, "maumlab");
+export const authService = initializeAuth(fb);
+export const dbService = getFirestore(fb);
