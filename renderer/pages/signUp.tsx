@@ -15,7 +15,7 @@ export default function SignUp() {
   const [state, setState] = useState(true);
   const router = useRouter();
   const [createUser, error] = useCreateUser();
-  console.log(error);
+
   useEffect(() => {
     if (password === rePassword) {
       setState(true);
