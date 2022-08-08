@@ -22,6 +22,7 @@ export default function (props: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <title>프론트엔드 이승훈 코딩테스트</title>
       </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
