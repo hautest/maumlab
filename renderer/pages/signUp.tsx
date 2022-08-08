@@ -1,7 +1,6 @@
 import { ChangeEvent, useEffect, useState, FormEvent } from "react";
 import { useCreateUser } from "../hooks";
-import styled from "styled-components";
-import { theme } from "../style";
+import { Box, BottomBox, Form } from "../style";
 import { useRouter } from "next/router";
 import { authService } from "../firebase";
 import { Button, Typography, LabelInput } from "../components";
@@ -52,8 +51,8 @@ export default function SignUp() {
     createUser({ email, password, nickName });
   };
   return (
-    <StyledSignUp>
-      <StyledForm onSubmit={handleSubmit}>
+    <Box>
+      <Form onSubmit={handleSubmit}>
         <LabelInput value={email} onChange={handleChange} id="email">
           이메일
         </LabelInput>
@@ -81,8 +80,8 @@ export default function SignUp() {
         <Button disabled={!(state && email && nickName && password)}>
           회원가입
         </Button>
-      </StyledForm>
-      <TypographyBox>
+      </Form>
+      <BottomBox>
         <Typography type="body4">계정이 있으시면</Typography>
         <Link href="/login">
           <Typography
@@ -93,29 +92,10 @@ export default function SignUp() {
             로그인하러 가기
           </Typography>
         </Link>
-      </TypographyBox>
+      </BottomBox>
       <Typography color="red" type="body4">
         {error}
       </Typography>
-    </StyledSignUp>
+    </Box>
   );
 }
-
-const StyledSignUp = styled.div`
-  padding: ${theme.spacing[16]} ${theme.spacing[64]};
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: ${theme.spacing[8]};
-`;
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.spacing[8]};
-`;
-
-const TypographyBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;

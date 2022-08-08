@@ -4,6 +4,7 @@ import { useLogin } from "../hooks";
 import { Typography, LabelInput, Button } from "../components";
 import { authService } from "../firebase";
 import { useRouter } from "next/router";
+import { BottomBox, Box, Form } from "../style";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -35,8 +36,8 @@ export default function Login() {
     login({ email, password });
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <Box>
+      <Form onSubmit={handleSubmit}>
         <Typography type="title">로그인이 필요해요</Typography>
         <LabelInput
           type="email"
@@ -54,21 +55,23 @@ export default function Login() {
         >
           비밀번호
         </LabelInput>
-        <Button>로그인</Button>
-      </form>
-      <Typography type="body4">계정이 없으시면</Typography>
-      <Link href="/signUp">
-        <Typography
-          color="turquoise2"
-          style={{ cursor: "pointer" }}
-          type="body4"
-        >
-          회원가입하러 가기
-        </Typography>
-      </Link>
-      <Typography color="red" type="body4">
+        <Button disabled={!(email && password)}>로그인</Button>
+      </Form>
+      <BottomBox>
+        <Typography type="body4">계정이 없으시면</Typography>
+        <Link href="/signUp">
+          <Typography
+            color="turquoise2"
+            style={{ cursor: "pointer" }}
+            type="body4"
+          >
+            회원가입하러 가기
+          </Typography>
+        </Link>
+      </BottomBox>
+      <Typography style={{ cursor: "pointer" }} color="red" type="body4">
         {error}
       </Typography>
-    </div>
+    </Box>
   );
 }
