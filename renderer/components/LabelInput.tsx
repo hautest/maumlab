@@ -23,7 +23,6 @@ export function LabelInput({
         id={id}
         type={type}
         state={state}
-        element="input"
         value={value}
         onChange={onChange}
       />
