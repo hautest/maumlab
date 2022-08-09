@@ -31,7 +31,13 @@ export function Input({
     );
   } else {
     return (
-      <StyledTextarea onChange={onChange} value={value} id={id} state={state} />
+      <StyledTextarea
+        rows={1}
+        onChange={onChange}
+        value={value}
+        id={id}
+        state={state}
+      />
     );
   }
 }
@@ -39,6 +45,7 @@ export function Input({
 const StyledInput = styled.input<{ state: boolean }>`
   width: 100%;
   outline: none;
+  font-size: ${theme.spacing[20]};
   padding: ${theme.spacing[12]} ${theme.spacing[16]};
   border-radius: ${theme.spacing[8]};
   border: solid 1px
@@ -53,6 +60,8 @@ const StyledTextarea = styled.textarea<{ state: boolean }>`
   outline: none;
   padding: ${theme.spacing[12]} ${theme.spacing[16]};
   border-radius: ${theme.spacing[8]};
+  font-size: ${theme.spacing[20]};
+  word-break: break-all;
   resize: none;
   border: solid 1px
     ${({ state }) => (state ? theme.colors.skyblue : theme.colors.red)};

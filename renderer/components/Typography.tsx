@@ -35,7 +35,9 @@ type TypographyConstantKey = keyof typeof TypographyConstant;
 export const Typography = styled.p<{
   type: TypographyConstantKey;
   color?: ThemeColorType;
+  pointer?: boolean;
 }>`
   ${({ type }) => TypographyConstant[type]};
   color: ${({ color }) => theme.colors[color]};
+  cursor: ${({ pointer }) => (pointer ? "pointer" : "default")};
 `;
