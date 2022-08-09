@@ -8,14 +8,23 @@ export interface InputProps
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   id?: string;
+  maxLength?: number;
 }
 
-export function Input({ type, state = true, id, onChange, value }: InputProps) {
+export function Input({
+  type,
+  state = true,
+  id,
+  onChange,
+  value,
+  maxLength,
+}: InputProps) {
   return (
     <StyledInput
       onChange={onChange}
       value={value}
       id={id}
+      maxLength={maxLength}
       state={state}
       type={type}
     />
