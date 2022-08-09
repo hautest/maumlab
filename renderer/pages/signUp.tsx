@@ -24,11 +24,10 @@ export default function SignUp() {
   }, [password, rePassword]);
 
   useEffect(() => {
-    authService.onAuthStateChanged((data) => {
-      if (data) {
-        router.push("/home");
-      }
-    });
+    const user = window.localStorage.getItem("userData");
+    if (user) {
+      router.push("/home");
+    }
   }, []);
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     switch (e.target.id) {
@@ -84,11 +83,7 @@ export default function SignUp() {
       <BottomBox>
         <Typography type="body4">계정이 있으시면</Typography>
         <Link href="/login">
-          <Typography
-            color="turquoise2"
-            style={{ cursor: "pointer" }}
-            type="body4"
-          >
+          <Typography color="turquoise2" pointer type="body4">
             로그인하러 가기
           </Typography>
         </Link>

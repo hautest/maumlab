@@ -59,16 +59,12 @@ export default function Login() {
       <BottomBox>
         <Typography type="body4">계정이 없으시면</Typography>
         <Link href="/signUp">
-          <Typography
-            color="turquoise2"
-            style={{ cursor: "pointer" }}
-            type="body4"
-          >
+          <Typography color="turquoise2" pointer type="body4">
             회원가입하러 가기
           </Typography>
         </Link>
       </BottomBox>
-      <Typography style={{ cursor: "pointer" }} color="red" type="body4">
+      <Typography pointer color="red" type="body4">
         {error}
       </Typography>
     </Box>

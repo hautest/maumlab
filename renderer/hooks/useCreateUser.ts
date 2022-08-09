@@ -3,6 +3,7 @@ import { updateProfile } from "firebase/auth";
 import { dbService, authService } from "../firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 interface createUserProps {
   email: string;
@@ -12,6 +13,7 @@ interface createUserProps {
 
 export function useCreateUser() {
   const [error, setError] = useState("");
+  const router = useRouter();
   const createUser = ({ email, password, nickName }: createUserProps) => {
     const ref = doc(dbService, "User", email);
     createUserWithEmailAndPassword(authService, email, password)
@@ -26,7 +28,16 @@ export function useCreateUser() {
           uid: data.user.uid,
           chat: [],
           login: true,
-        });
+        })
+          .then(() => {
+            localStorage.setItem(
+              "userData",
+              JSON.stringify({ email, uid: data.user.uid })
+            );
+          })
+          .then(() => {
+            router.push("/home");
+          });
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {

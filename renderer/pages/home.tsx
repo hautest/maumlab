@@ -1,8 +1,8 @@
 import { Typography, Modal, Button, Input, ChatList } from "../components";
 import styled from "styled-components";
-import { useGetUser, useLogin } from "../hooks";
+import { useGetUser, useLogin, useChat } from "../hooks";
 import { UserList } from "../components/UserList";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { theme } from "../style";
 import { useRouter } from "next/router";
 
@@ -10,8 +10,8 @@ export default function Home() {
   const [user, setUser] = useGetUser();
   const [modal, setModal] = useState(false);
   const [chatName, setChatName] = useState("");
-  const [checkState, setCheckState] = useState([]);
-  console.log(checkState);
+  const [participant, setParticipant] = useState([]);
+  const { makeChat } = useChat();
   const nav = useRouter();
 
   const { logOut } = useLogin();
@@ -28,6 +28,10 @@ export default function Home() {
     } = e;
     setChatName(value);
   };
+  const handleMakeChat = () => {
+    makeChat({ chatName, participant });
+    setModal(false);
+  };
   useEffect(() => {
     if (!window.localStorage.getItem("userData")) {
       nav.push("/login");
@@ -35,7 +39,7 @@ export default function Home() {
   }, []);
   useEffect(() => {
     if (modal && user) {
-      setCheckState([user.email]);
+      setParticipant([user.email]);
     }
   }, [modal]);
   return (
@@ -48,8 +52,8 @@ export default function Home() {
               <Button onClick={toggleModal}>X</Button>
             </ButtonBox>
           </InputButtonBox>
-          <UserList fixedCheck={user?.email} check setState={setCheckState} />
-          <Button onClick={toggleModal}>만들기</Button>
+          <UserList fixedCheck={user?.email} check setState={setParticipant} />
+          <Button onClick={handleMakeChat}>만들기</Button>
         </ModalBox>
       </Modal>
       {user && (
