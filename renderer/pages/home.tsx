@@ -52,7 +52,7 @@ export default function Home() {
       <Modal visible={modal}>
         <ModalBox>
           <InputButtonBox>
-            <Input element="input" onChange={hanldeChatName} value={chatName} />
+            <Input onChange={hanldeChatName} value={chatName} />
             <ButtonBox>
               <Button onClick={toggleModal}>X</Button>
             </ButtonBox>
