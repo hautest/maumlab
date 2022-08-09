@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { Typography, Input, Button } from "../../components";
 import styled from "styled-components";
-import { theme } from "../../style";
+import { theme, flexJustAlignCenter, flexAlignCenter } from "../../style";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useChat, useGetUser } from "../../hooks";
 import Link from "next/link";
@@ -91,15 +91,12 @@ const ChatContentBox = styled.main`
 const StyledChatting = styled.div`
   height: 100%;
   gap: ${theme.spacing[8]};
-  display: flex;
+  ${flexJustAlignCenter}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 const Form = styled.form`
-  display: flex;
+  ${flexAlignCenter}
   width: 60%;
-  align-items: center;
 `;
 const ButtonBox = styled.div`
   min-width: fit-content;
@@ -111,8 +108,6 @@ const MessageBox = styled.div<{ myMessage?: boolean }>`
     myMessage ? "flex-end" : "flex-start"};
 `;
 const HeaderBox = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${flexJustAlignCenter}
   width: 60%;
 `;

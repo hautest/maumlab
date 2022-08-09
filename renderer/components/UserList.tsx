@@ -1,5 +1,5 @@
 import { DocumentData } from "firebase/firestore";
-import { CheckBox, CheckStyle, StyledCheckBox } from "./CheckBox";
+import { CheckBox } from "./CheckBox";
 import { useGetUserList } from "../hooks";
 import { Dispatch, SetStateAction } from "react";
 import { Typography } from "./Typography";
@@ -8,6 +8,8 @@ import {
   StyledList,
   FlexJustSpaceBetLi,
   FlexGap4,
+  StyledCheckBox,
+  CheckStyle,
 } from "../style";
 
 interface UserListProps {

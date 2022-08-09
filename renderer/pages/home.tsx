@@ -3,7 +3,12 @@ import styled from "styled-components";
 import { useGetUser, useLogin, useChat } from "../hooks";
 import { UserList } from "../components/UserList";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { theme } from "../style";
+import {
+  flexAlignCenter,
+  flexJustAlignCenter,
+  flexJustCenter,
+  theme,
+} from "../style";
 import { useRouter } from "next/router";
 
 export default function Home() {
@@ -78,25 +83,20 @@ export default function Home() {
 }
 
 const StyledHome = styled.div`
-  display: flex;
+  ${flexJustAlignCenter}
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: ${theme.spacing[20]};
   height: 100vh;
 `;
 
 const ListBox = styled.main`
-  display: flex;
-  justify-content: center;
+  ${flexJustCenter}
   gap: ${theme.spacing[16]};
 `;
 
 const HeaderBox = styled.header`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${flexJustAlignCenter}
 `;
 
 const ButtonBox = styled.div`
@@ -108,7 +108,6 @@ const ModalBox = styled.div`
   gap: ${theme.spacing[8]};
 `;
 const InputButtonBox = styled.div`
-  display: flex;
+  ${flexAlignCenter}
   gap: ${theme.spacing[8]};
-  align-items: center;
 `;
