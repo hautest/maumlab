@@ -2,7 +2,6 @@ import { ChangeEvent, useEffect, useState, FormEvent } from "react";
 import { useCreateUser } from "../hooks";
 import { Box, BottomBox, Form } from "../style";
 import { useRouter } from "next/router";
-import { authService } from "../firebase";
 import { Button, Typography, LabelInput } from "../components";
 import Link from "next/link";
 
