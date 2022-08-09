@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { Typography, Input, Button } from "../../components";
 import styled from "styled-components";
 import { theme, flexJustAlignCenter, flexAlignCenter } from "../../style";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useChat, useGetUser } from "../../hooks";
 import Link from "next/link";
 
@@ -12,24 +12,23 @@ export default function Chatting() {
   const [inputValue, setInputValue] = useState("");
   const [user] = useGetUser();
   const chat = getChat(router.query.id);
-
   useEffect(() => {
-    const aa = document.querySelector(".chatContentBox");
-    console.log(aa.scrollTop);
-    aa.scrollTop = aa.scrollHeight;
+    const chatBox = document.querySelector(".chatContentBox");
+    chatBox.scrollTop = chatBox.scrollHeight;
   }, [chat]);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {
       target: { value },
     } = e;
     setInputValue(value);
   };
-  const handleSubmit = () => {
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (inputValue === "") return;
     sendMessage(chat.chatName, user.displayName, inputValue);
     setInputValue("");
-  };
-  const handleHome = () => {
-    router.push("/home");
   };
   return (
     <StyledChatting>
@@ -67,7 +66,7 @@ export default function Chatting() {
         })}
       </ChatContentBox>
       <Form onSubmit={handleSubmit}>
-        <Input element="textarea" value={inputValue} onChange={handleChange} />
+        <Input value={inputValue} onChange={handleChange} />
         <ButtonBox>
           <Button>전송</Button>
         </ButtonBox>
