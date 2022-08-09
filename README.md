@@ -16,31 +16,34 @@ typescript, nextron, firebase, styled-components
 
 첫 화면으로 들어가면
 
-![스크린샷 2022-08-10 오전 8.08.32.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e5b30ff-0bda-4092-918a-e788dbddcd18/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.08.32.png)
+<img width="800" alt="스크린샷 2022-08-10 오전 8 27 12" src="https://user-images.githubusercontent.com/100465780/183778783-05e10fd8-0319-41df-b23c-af18f67ef21f.png">
 
 로그인 화면이 나옵니다. 로그인, 회원가입 구현은 **firebase**에 ****Authentication****와 ****Firestore****를 이용하여 custom hook을 만들어서 구현했습니다.
 
 **회원가입하러 가기**를 통해서 회원가입 페이지로 넘어가집니다.
 
-![스크린샷 2022-08-10 오전 8.10.04.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f79d173f-6380-4306-a6d7-075bc07c4963/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.10.04.png)
+<img width="791" alt="스크린샷 2022-08-10 오전 8 28 17" src="https://user-images.githubusercontent.com/100465780/183778889-0c4ca818-e270-4c51-865d-34679193316e.png">
+
 
 회원가입 또는 로그인을 하면 홈 화면으로 넘어가집니다.
 
-![스크린샷 2022-08-10 오전 8.11.00.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0e780ba0-0e01-4fce-bd2e-68c557b3e978/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.11.00.png)
+<img width="789" alt="스크린샷 2022-08-10 오전 8 29 40" src="https://user-images.githubusercontent.com/100465780/183779010-251f211f-38e5-41e6-948a-9511b8511a9f.png">
 
 왼쪽에 유저 리스트가 나오고 현재 로그인 중인 유저는 🔵 로그인하고 있지 않은 유저는 🔴를 사용하여 표시했습니다.
 
-오른쪽에 현재 유저가 속해 있는 채팅방들이 나오게 구현했습니다. **()**안에 있는 숫자는 채팅방 안에 있는 인원수를 의미합니다.
+오른쪽에 현재 유저가 속해 있는 채팅방들이 나오게 구현했습니다. **()** 안에 있는 숫자는 채팅방 안에 있는 인원수를 의미합니다.
 
 **채팅 만들기** 버튼을 누르면 
 
-![스크린샷 2022-08-10 오전 8.16.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/99da5aae-688c-4f62-836f-a631d89da7fc/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.16.47.png)
+<img width="794" alt="스크린샷 2022-08-10 오전 8 30 12" src="https://user-images.githubusercontent.com/100465780/183779057-388f9891-ade3-4bcc-b1eb-5943fa4a4ecc.png">
+
 
 **Modal**이 나오면서 채팅방 이름과 같이 채팅할 수 있는 유저를 선택할 수 있습니다. 
 
 **만들기** 버튼을 클릭해서 채팅방 들어갈 수 있습니다.
 
-![스크린샷 2022-08-10 오전 8.21.00.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43cd81a4-aa99-435b-98a8-ffa65ec81623/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_8.21.00.png)
+<img width="792" alt="스크린샷 2022-08-10 오전 8 30 38" src="https://user-images.githubusercontent.com/100465780/183779094-1b402500-eb13-4ec9-b342-6b30e26d97ec.png">
+
 
 유저 본인이 입력한 채팅은 오른쪽에 정렬시키고 다른 유저가 입력한 채팅은 왼쪽에 정렬 시키는 식으로 정리하였습니다.
 
