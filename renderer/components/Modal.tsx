@@ -1,6 +1,6 @@
 import { ReactNode, MouseEvent, FC, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { theme } from "../style";
+import { theme, flexJustAlignCenter } from "../style";
 import styled from "styled-components";
 
 interface ModalInterface {
@@ -35,9 +35,7 @@ export function Modal({ children, visible, onClick }: ModalInterface) {
 
 const StyledModal: FC<ModalInterface> = styled.div<ModalInterface>`
   visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${flexJustAlignCenter}
   background-color: ${theme.colors.navy};
   position: fixed;
   top: 0;
